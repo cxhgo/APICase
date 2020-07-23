@@ -14,14 +14,28 @@ name = cf.get("tester","name")
 
 class WriteExcel():
     #-------------文件写入数据---------------
-    def __init__(self,filename):
+    def __init__(self,filename,sheetname):
+        """
+        初始化数据
+        :param filename:xls文件名
+        :param sheetname:表格名称
+        :return: 无
+        """
         self.filename = filename
         if not os.path.exists(self.filename):
             shutil.copyfile(setting.Source_File,setting.Target_File)#将文件1覆盖到文件2
         self.wb = load_workbook(self.filename)#打开文件
-        self.ws = self.wb.active#获取第一个sheet
+        #self.ws = self.wb.active#获取第一个sheet
+        self.ws = self.wb[sheetname]
+
 
     def write_data(self,row_num,value):
+        """
+        将测试结果和测试人员写入表格
+        :param row_num:对应行数
+        :param value:测试结果值
+        :return: 无
+        """
         #写入测试结果
         font_Creen = Font(name='宋体',color= GREEN,bold=True)
         font_Red = Font(name='宋体',color=RED,bold=True)
@@ -30,14 +44,14 @@ class WriteExcel():
         #获取所在行数
         L_num = "L"+str(row_num)
         M_num = "M"+str(row_num)
-        print(L_num,M_num)
+        #print(L_num,M_num)
         if value =="PASS":
             self.ws.cell(row_num,12,value)#在第row_n行第12列写入value
             self.ws[L_num].font = font_Creen
         if value =="FAIL":
             self.ws.cell(row_num,12,value)
             self.ws[L_num].font = font_Red
-        self.ws.cell(row_num,13,name)#在第row_n行第13列写入测试人员名字
+        self.ws.cell(row_num,13,name)#在第row_num行第13列写入测试人员名字
         self.ws[L_num].alignment =align
         self.ws[M_num].alignment = align
         self.ws[M_num].font = font_Yellow

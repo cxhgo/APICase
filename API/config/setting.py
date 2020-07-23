@@ -16,3 +16,9 @@ Target_File = os.path.join(BASE_DIR,"report","excelReport","APITestCase.xlsx")
 Test_Report = os.path.join(BASE_DIR,"report")
 #测试用例程序文件
 Test_Case = os.path.join(BASE_DIR,"testcase")
+#截图文件
+Img_File = os.path.join(BASE_DIR,"report","screenimg")
+
+
+
+

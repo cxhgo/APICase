@@ -5,6 +5,11 @@ import requests
 
 class SendRequests():
     def sendRequests(self,apiData):
+        """
+        发送接口请求
+        :param apiData:接口请求数据
+        :return: 返回接口响应信息，以json格式
+        """
         try:
             #发送请求数据
             method = apiData["method"]
@@ -40,8 +45,8 @@ class SendRequests():
             re =requests.request(method=method,url =url, headers =h,params = par,data = body,verify = v)
             msg = json.loads(re.text)
             msg['status_code']=re.status_code
-            print(msg)
-            print(re.status_code)
+            #print(msg)
+            #print(re.status_code)
             return msg
             #print(re.text)
             # if method =="get":

@@ -715,7 +715,7 @@ class HTMLTestRunner(Template_mixin):
         row = tmpl % dict(
             tid = tid,
             Class = (n == 0 and 'hiddenRow' or 'none'),
-            style = n == 2 and 'errorCase' or (n == 1 and 'failCase' or 'passCase'),
+            style = (n == 2 and 'errorCase' or (n == 1 and 'failCase' or 'none')),
             desc = desc,
             script = script,
             status = self.STATUS[n],

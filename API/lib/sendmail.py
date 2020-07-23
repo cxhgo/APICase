@@ -13,6 +13,7 @@ def send_mail(file_new):
     定义发送邮件
     :param file_new:
     :return: 成功：打印发送邮箱成功；失败：返回失败信息
+    报告中测试用例名称需要修改ddt.py获取表格中的case_name显示
     """
     # f = open(file_new,'rb')
     # mail_body = f.read()

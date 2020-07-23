@@ -1,11 +1,11 @@
 # _*_ coding:utf-8 _*_
 import os
-
-
+import time
+from API.config import setting
 def new_report(testreport):
     """
     生成最新的测试报告文件
-    :param testreport:
+    :param testreport:报告所在文件夹
     :return:返回文件
     """
     #返回指定的文件夹包含的文件或文件夹的名字的列表
