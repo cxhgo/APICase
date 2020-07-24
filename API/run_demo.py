@@ -8,7 +8,6 @@ from API.lib.newreport import new_report
 from API.package.HTMLTestRunnerone import HTMLTestRunner
 from API.testcase.testAPI import Demo_API
 from API.lib.sendmail import send_mail
-from API.lib.newreport import get_windows_img
 def add_case(test_path = setting.Test_Case):
     """
          加载所有的测试用例
