@@ -1,6 +1,6 @@
 # _*_ coding:utf-8 _*_
 import os,sys
-sys.path.append(os.path.dirname(__file__))
+#sys.path.append(os.path.dirname(__file__))
 from API.config import setting
 import unittest,time
 from HTMLTestRunner import HTMLTestRunner
